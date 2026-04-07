@@ -1,5 +1,5 @@
 # ani-mushkudiani-project
-> ["Online კაფეს ვებ-საიტი, სადაც მომხმარებელს შეუძლია მენიუს დათვალიერება, პროდუქტების გაფილტვრა და შეკვეთის გაფორმება."]
+> [Online კაფეს ვებ-საიტი, სადაც მომხმარებელს შეუძლია მენიუს დათვალიერება, პროდუქტების გაფილტვრა და შეკვეთის გაფორმება.]
 
 06.04 - პროექტის თემის არჩევა
 06.04 - გვერდების სქემის შედგენა
@@ -7,8 +7,9 @@
 07.04 - სამუშაო გეგმის შედგენა 
 07.04 - Vite პროექტის შექმნა
 07.04 - Tailwind CSS-ის დაყენება
-07.04 -
-07.04 - 
+07.04 - React Router-იდ დაყენება
+07.04 - საქაღალდეების სტრუქტურა
+07.04 - პირველი კომიტი
 
 
 ## 🛠️ ტექნოლოგიები
@@ -17,7 +18,7 @@
 - 🎨 Tailwind CSS
 - 🔀 React Router v6
 - 🔗 [API სახელი] — [API ლინკი]
-- 🤖 AI ხელსაწყო: [ChatGPT / Claude / Gemini]
+- 🤖 AI ხელსაწყო: [Gemini]
 - 🐙 Git / GitHub
 
 ---
@@ -36,8 +37,8 @@
 ## 🚀 ინსტალაცია
 
 ```bash
-git clone https://github.com/[შენი-username]/[repo-name]
-cd [repo-name]
+git clone https://github.com/mushkudianiani4-sudo/ani-mushkudiani-project
+cd [ani-mushkudiani-project]
 npm install
 npm run dev
 ```
@@ -72,4 +73,4 @@ npm run dev
 
 ## 👤 ავტორი
 
-**[ანი მუშკუდიანი]** — [GitHub პროფილის ლინკი]
+**[ანი მუშკუდიანი]** — [https://github.com/mushkudianiani4-sudo]
