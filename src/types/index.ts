@@ -1,13 +1,23 @@
-export interface IProduct {
-  id: string;
-  title: string;
-  description: string;
-  price: number;
-  imageUrl: string;
-  category?: string;
+export interface MenuItem {
+    id: number;
+    name: string;
+    description: string;
+    price: number;
+    category: 'სტარტერი' | 'მთავარი' | 'დესერტი' | 'სასმელი';
+    imageUrl: string;
+    isVegetarian?: boolean;
 }
 
-export interface NavLink {
-  label: string;
-  path: string;
+export interface Navlink {
+    label: string;
+    path: string;
+}
+
+export interface ReservationForm {
+    name: string;
+    email: string;
+    phone: string;
+    date: string;
+    time: string;
+    guestsCount: number;
 }
