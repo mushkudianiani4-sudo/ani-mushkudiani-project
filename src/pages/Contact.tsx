@@ -1,65 +1,19 @@
-import { useState, useEffect, ChangeEvent, FormEvent } from 'react';
-import Section from '../components/Section';
-import Button from '../components/Button';
-import { ContactForm } from '../types'; // დარწმუნდი, რომ ეს იმპორტი სწორია
+import { useState, useEffect } from 'react';
 
 const Contact = () => {
-  useEffect(() => {
-    document.title = 'კონტაქტი | Cafe Moon';
-  }, []);
-
-  const [form, setForm] = useState<ContactForm>({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setForm(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    console.log(form);
-    alert('შეტყობინება გაიგზავნა!');
-    setForm({ name: '', email: '', message: '' });
-  };
+  useEffect(() => { document.title = 'კონტაქტი | Cafe Moon'; }, []);
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
 
   return (
-    <Section title="დაგვიკავშირდით">
-      <div className="max-w-xl mx-auto">
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <input 
-            name="name" 
-            value={form.name} 
-            onChange={handleChange} 
-            placeholder="თქვენი სახელი"
-            className="w-full p-3 border rounded-lg outline-none focus:ring-2 focus:ring-orange-200"
-            required
-          />
-          <input 
-            name="email" 
-            type="email"
-            value={form.email} 
-            onChange={handleChange} 
-            placeholder="ელ-ფოსტა"
-            className="w-full p-3 border rounded-lg outline-none focus:ring-2 focus:ring-orange-200"
-            required
-          />
-          <textarea 
-            name="message" 
-            value={form.message} 
-            onChange={handleChange} 
-            placeholder="შეტყობინება"
-            rows={4}
-            className="w-full p-3 border rounded-lg outline-none focus:ring-2 focus:ring-orange-200"
-            required
-          ></textarea>
-          <Button label="გაგზავნა" variant="primary" type="submit" />
-        </form>
-      </div>
-    </Section>
+    <div className="py-16 container mx-auto px-6 max-w-lg">
+      <h1 className="text-4xl font-bold text-center mb-8">დაგვიკავშირდით</h1>
+      <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+        <input className="w-full p-3 border rounded-lg" placeholder="სახელი" value={form.name} onChange={(e) => setForm({...form, name: e.target.value})} />
+        <input className="w-full p-3 border rounded-lg" placeholder="ელ-ფოსტა" value={form.email} onChange={(e) => setForm({...form, email: e.target.value})} />
+        <textarea className="w-full p-3 border rounded-lg" placeholder="შეტყობინება" rows={4} value={form.message} onChange={(e) => setForm({...form, message: e.target.value})} />
+        <button className="bg-orange-600 text-white w-full py-3 rounded-lg font-bold">გაგზავნა</button>
+      </form>
+    </div>
   );
 };
 
