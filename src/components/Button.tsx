@@ -1,40 +1,26 @@
-import React from 'react';
-
-export interface ButtonProps {
+interface ButtonProps {
+  label: string;
+  onClick?: () => void;
   variant?: 'primary' | 'secondary' | 'outline';
-  children: React.ReactNode;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  className?: string;
-  disabled?: boolean;
-  type?: 'button' | 'submit' | 'reset';
+  type?: 'button' | 'submit';
 }
 
-const Button: React.FC<ButtonProps> = ({
-  variant = 'primary',
-  children,
-  onClick,
-  className = '',
-  disabled = false,
-  type = 'button'
-}) => {
-  const baseStyles = "px-6 py-2 rounded-lg font-medium transition-all duration-300 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#C3B1E1] focus:ring-offset-1 disabled:opacity-50 disabled:cursor-not-allowed";
-
+const Button = ({ label, onClick, variant = 'primary', type = 'button' }: ButtonProps) => {
+  const baseStyles = "px-6 py-2 rounded-full font-medium transition-all duration-300 active:scale-95";
+  
   const variants = {
-    primary: "bg-[#4A0E4E] text-white hover:bg-[#3A0B3D] shadow-md hover:shadow-lg",
-    secondary: "bg-[#C3B1E1] text-[#4A0E4E] hover:bg-[#A391C1] shadow-sm hover:shadow-md",
-    outline: "bg-transparent border-2 border-[#4A0E4E] text-[#4A0E4E] hover:bg-[#4A0E4E] hover:text-white"
+    primary: "bg-orange-600 text-white hover:bg-orange-700 shadow-md hover:shadow-lg",
+    secondary: "bg-gray-800 text-white hover:bg-gray-900",
+    outline: "border-2 border-orange-600 text-orange-600 hover:bg-orange-50"
   };
 
-  const combinedClassName = `${baseStyles} ${variants[variant]} ${className}`;
-
   return (
-    <button
+    <button 
       type={type}
-      className={combinedClassName}
-      onClick={onClick}
-      disabled={disabled}
+      onClick={onClick} 
+      className={`${baseStyles} ${variants[variant]}`}
     >
-      {children}
+      {label}
     </button>
   );
 };
