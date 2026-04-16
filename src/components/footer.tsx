@@ -2,15 +2,15 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-12 mt-auto">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Contact Info */}
+        {}
         <div>
           <h3 className="text-xl font-bold mb-4">კონტაქტი</h3>
-          <p className="text-gray-400">მისამართი: თბილისი, მთაწმინდა</p>
+          <p className="text-gray-400">მისამართი: ქუთაისი</p>
           <p className="text-gray-400">ტელ: +995 555 12 34 56</p>
           <p className="text-gray-400">ელ-ფოსტა: info@cafemoon.ge</p>
         </div>
 
-        {/* Social Links */}
+        {}
         <div>
           <h3 className="text-xl font-bold mb-4">მოგვყევით</h3>
           <div className="flex space-x-4">
@@ -19,7 +19,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Copyright */}
+        {}
         <div>
           <h3 className="text-xl font-bold mb-4">Cafe Moon</h3>
           <p className="text-gray-400">

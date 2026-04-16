@@ -12,7 +12,7 @@ interface CardProps {
 const Card = ({ title, image, description, price, category }: CardProps) => {
   return (
     <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col h-full">
-      {/* Image Container */}
+      {}
       <div className="relative h-48 overflow-hidden">
         <img 
           src={image} 
@@ -26,7 +26,7 @@ const Card = ({ title, image, description, price, category }: CardProps) => {
         )}
       </div>
 
-      {/* Content */}
+      {}
       <div className="p-5 flex flex-col flex-grow">
         <div className="flex justify-between items-start mb-2">
           <h3 className="text-xl font-bold text-gray-800">{title}</h3>

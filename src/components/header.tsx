@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <nav className="container mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
-        {/* Logo */}
+        {}
         <Link to="/" className="text-2xl font-bold text-orange-600">
           Cafe Moon
         </Link>
@@ -33,7 +33,7 @@ const Header = () => {
           ))}
         </div>
 
-        {/* Mobile Hamburger Button */}
+        {}
         <button 
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden text-gray-700 focus:outline-none"
@@ -42,7 +42,7 @@ const Header = () => {
         </button>
       </nav>
 
-      {/* Mobile Menu Content */}
+      {}
       {isOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 flex flex-col p-4 space-y-4">
           {navLinks.map((link) => (
