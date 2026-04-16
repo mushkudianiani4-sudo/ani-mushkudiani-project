@@ -1,26 +1,31 @@
-import React from 'react';
-
-const Footer: React.FC = () => {
-  const currentYear = new Date().getFullYear();
-
+const Footer = () => {
   return (
-    <footer className="bg-[#1B1717] text-[#FEFAE0]/70 py-12 border-t border-[#D4A373]/20">
-      <div className="container mx-auto px-6 flex flex-col items-center gap-6">
-        
-        <div className="flex flex-col items-center gap-2">
-          <div className="text-2xl font-serif tracking-[0.4em] text-[#D4A373]">moon</div>
-          <div className="w-12 h-[1px] bg-[#D4A373]/50"></div>
+    <footer className="bg-gray-900 text-white py-12 mt-auto">
+      <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Contact Info */}
+        <div>
+          <h3 className="text-xl font-bold mb-4">კონტაქტი</h3>
+          <p className="text-gray-400">მისამართი: თბილისი, მთაწმინდა</p>
+          <p className="text-gray-400">ტელ: +995 555 12 34 56</p>
+          <p className="text-gray-400">ელ-ფოსტა: info@cafemoon.ge</p>
         </div>
 
-        <div className="flex gap-6 text-xs uppercase tracking-widest mb-4">
-          <a href="#" className="hover:text-[#D4A373]">Instagram</a>
-          <a href="#" className="hover:text-[#D4A373]">Facebook</a>
+        {/* Social Links */}
+        <div>
+          <h3 className="text-xl font-bold mb-4">მოგვყევით</h3>
+          <div className="flex space-x-4">
+            <a href="#" className="hover:text-orange-500 transition-colors">Facebook</a>
+            <a href="#" className="hover:text-orange-500 transition-colors">Instagram</a>
+          </div>
         </div>
 
-        <p className="text-[10px] tracking-widest uppercase opacity-50 text-center">
-          &copy; {currentYear} moon Bakery & Cafe. დამზადებულია პრაქტიკული პროექტისთვის.
-        </p>
-        
+        {/* Copyright */}
+        <div>
+          <h3 className="text-xl font-bold mb-4">Cafe Moon</h3>
+          <p className="text-gray-400">
+            © {new Date().getFullYear()} ყველა უფლება დაცულია.
+          </p>
+        </div>
       </div>
     </footer>
   );

@@ -1,62 +1,60 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { NavLink as NavLinkType } from '../types';
 
-export interface Navlink {
-  label: string;
-  path: string;
-}
+const Header = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
-interface HeaderProps {
-  links: Navlink[];
-}
-
-const Header: React.FC<HeaderProps> = ({ links }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const navLinks: NavLinkType[] = [
+    { label: 'მთავარი', path: '/' },
+    { label: 'ჩვენს შესახებ', path: '/about' },
+    { label: 'მენიუ', path: '/menu' },
+    { label: 'კონტაქტი', path: '/contact' },
+  ];
 
   return (
-    <header className="bg-[#2D2424] text-[#FEFAE0] shadow-xl sticky top-0 z-50">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        
-        <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 border border-[#D4A373] rounded-full flex items-center justify-center text-lg font-serif group-hover:bg-[#D4A373] group-hover:text-[#2D2424] transition-all">
-            M
-          </div>
-          <span className="tracking-[0.3em] text-xl font-light italic">MOON</span>
+    <header className="bg-white shadow-sm sticky top-0 z-50">
+      <nav className="container mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
+        {/* Logo */}
+        <Link to="/" className="text-2xl font-bold text-orange-600">
+          Cafe Moon
         </Link>
 
-        <nav className="hidden md:flex gap-10 items-center">
-          {links.map((link, index) => (
-            <Link
-              key={index}
-              to={link.path}
-              className="text-xs uppercase tracking-widest hover:text-[#D4A373] transition-colors"
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex space-x-8">
+          {navLinks.map((link) => (
+            <Link 
+              key={link.path} 
+              to={link.path} 
+              className="text-gray-700 hover:text-orange-600 transition-all font-medium"
             >
               {link.label}
             </Link>
           ))}
-        </nav>
+        </div>
 
-        <button className="md:hidden text-[#D4A373]" onClick={() => setIsOpen(!isOpen)}>
-          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            {isOpen ? <path d="M6 18L18 6M6 6l12 12" /> : <path d="M4 6h16M4 12h16m-7 6h7" />}
-          </svg>
+        {/* Mobile Hamburger Button */}
+        <button 
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden text-gray-700 focus:outline-none"
+        >
+          <span className="text-2xl">{isOpen ? '✕' : '☰'}</span>
         </button>
-      </div>
+      </nav>
 
+      {/* Mobile Menu Content */}
       {isOpen && (
-        <div className="md:hidden bg-[#3D3030] border-t border-white/5 shadow-2xl">
-          <nav className="flex flex-col p-8 gap-6">
-            {links.map((link, index) => (
-              <Link
-                key={index}
-                to={link.path}
-                className="text-lg tracking-widest border-b border-white/5 pb-2"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
+        <div className="md:hidden bg-white border-t border-gray-100 flex flex-col p-4 space-y-4">
+          {navLinks.map((link) => (
+            <Link 
+              key={link.path} 
+              to={link.path} 
+              onClick={() => setIsOpen(false)}
+              className="text-gray-700 hover:text-orange-600 font-medium"
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
       )}
     </header>

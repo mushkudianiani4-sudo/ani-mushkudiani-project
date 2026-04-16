@@ -1,22 +1,40 @@
-interface ButtonProps {
-  label: string;
-  variant: 'primary' | 'secondary' | 'outline';
-  onClick?: () => void;
-  type?: 'button' | 'submit';
+import React from 'react';
+
+export interface ButtonProps {
+  variant?: 'primary' | 'secondary' | 'outline';
+  children: React.ReactNode;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  className?: string;
+  disabled?: boolean;
+  type?: 'button' | 'submit' | 'reset';
 }
 
-const Button = ({ label, variant, onClick, type = 'button' }: ButtonProps) => {
-  const baseStyles = "px-8 py-3 rounded-full font-bold transition-all duration-300 active:scale-95 text-sm uppercase tracking-widest";
-  
+const Button: React.FC<ButtonProps> = ({
+  variant = 'primary',
+  children,
+  onClick,
+  className = '',
+  disabled = false,
+  type = 'button'
+}) => {
+  const baseStyles = "px-6 py-2 rounded-lg font-medium transition-all duration-300 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#C3B1E1] focus:ring-offset-1 disabled:opacity-50 disabled:cursor-not-allowed";
+
   const variants = {
-    primary: "bg-[#4A0E4E] text-white hover:bg-[#3A0B3D] shadow-lg shadow-[#4A0E4E]/20",
-    secondary: "bg-[#C3B1E1] text-[#4A0E4E] hover:bg-[#B3A1D1]",
-    outline: "border-2 border-[#4A0E4E] text-[#4A0E4E] hover:bg-[#4A0E4E] hover:text-white"
+    primary: "bg-[#4A0E4E] text-white hover:bg-[#3A0B3D] shadow-md hover:shadow-lg",
+    secondary: "bg-[#C3B1E1] text-[#4A0E4E] hover:bg-[#A391C1] shadow-sm hover:shadow-md",
+    outline: "bg-transparent border-2 border-[#4A0E4E] text-[#4A0E4E] hover:bg-[#4A0E4E] hover:text-white"
   };
 
+  const combinedClassName = `${baseStyles} ${variants[variant]} ${className}`;
+
   return (
-    <button type={type} onClick={onClick} className={`${baseStyles} ${variants[variant]}`}>
-      {label}
+    <button
+      type={type}
+      className={combinedClassName}
+      onClick={onClick}
+      disabled={disabled}
+    >
+      {children}
     </button>
   );
 };

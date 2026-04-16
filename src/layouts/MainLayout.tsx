@@ -1,21 +1,17 @@
-import React from 'react';
+import { ReactNode } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { navLinks } from '../data';
 
-interface MainLayoutProps {
-  children: React.ReactNode;
+interface LayoutProps {
+  children: ReactNode;
 }
 
-const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
+const MainLayout = ({ children }: LayoutProps) => {
   return (
-    <div className="flex flex-col min-h-screen bg-[#FDFBF7]">
-      <Header links={navLinks} />
+    <div className="min-h-screen flex flex-col">
+      <Header />
       <main className="flex-grow">
-        {/* დამატებულია fade-in ეფექტი შიგთავსისთვის */}
-        <div className="animate-fadeIn">
-          {children}
-        </div>
+        {children}
       </main>
       <Footer />
     </div>
