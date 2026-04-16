@@ -1,15 +1,16 @@
-import { useState, ChangeEvent, FormEvent } from 'react';
+import { useState, useEffect, ChangeEvent, FormEvent } from 'react';
 import Section from '../components/Section';
 import Button from '../components/Button';
 import { ContactForm as ContactFormType } from '../types';
 
 const Contact = () => {
-  // 1.useState ფორმისთვის
-  const [form, setForm] = useState<ContactFormType>({
-    name: '',
-    email: '',
-    message: ''
-  });
+  // 5.2: გვერდის სათაური
+  useEffect(() => {
+    document.title = 'კონტაქტი | Cafe Moon';
+  }, []);
+
+  // 5.1: ფორმის მართვა
+  const [form, setForm] = useState<ContactFormType>({ name: '', email: '', message: '' });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -18,9 +19,7 @@ const Contact = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    console.log('გაგზავნილი მონაცემები:', form);
-    alert('მადლობა! თქვენი შეტყობინება მიღებულია.');
-    // ფორმის გასუფთავება
+    alert('შეტყობინება გაიგზავნა!');
     setForm({ name: '', email: '', message: '' });
   };
 
@@ -28,42 +27,21 @@ const Contact = () => {
     <Section title="დაგვიკავშირდით">
       <div className="max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-sm border">
         <form onSubmit={handleSubmit} className="space-y-6">
-          <div>
-            <label className="block text-sm font-medium mb-2">სახელი</label>
-            <input 
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              type="text" 
-              className="w-full px-4 py-3 rounded-lg border focus:border-orange-500 outline-none transition-all"
-              placeholder="თქვენი სახელი"
-              required
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-2">ელ-ფოსტა</label>
-            <input 
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              type="email" 
-              className="w-full px-4 py-3 rounded-lg border focus:border-orange-500 outline-none"
-              placeholder="email@example.com"
-              required
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-2">შეტყობინება</label>
-            <textarea 
-              name="message"
-              value={form.message}
-              onChange={handleChange}
-              rows={4}
-              className="w-full px-4 py-3 rounded-lg border focus:border-orange-500 outline-none"
-              placeholder="რით შეგვიძლია დაგეხმაროთ?"
-              required
-            ></textarea>
-          </div>
+          <input 
+            name="name" value={form.name} onChange={handleChange}
+            type="text" className="w-full px-4 py-3 rounded-lg border outline-none focus:border-orange-500" 
+            placeholder="თქვენი სახელი" required 
+          />
+          <input 
+            name="email" value={form.email} onChange={handleChange}
+            type="email" className="w-full px-4 py-3 rounded-lg border outline-none focus:border-orange-500" 
+            placeholder="ელ-ფოსტა" required 
+          />
+          <textarea 
+            name="message" value={form.message} onChange={handleChange}
+            rows={4} className="w-full px-4 py-3 rounded-lg border outline-none focus:border-orange-500" 
+            placeholder="შეტყობინება" required 
+          ></textarea>
           <Button label="გაგზავნა" variant="primary" type="submit" />
         </form>
       </div>

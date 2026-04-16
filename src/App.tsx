@@ -1,20 +1,25 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop.tsx';
+import MainLayout from './layouts/MainLayout';
 import Home from './pages/Home';
-import Menu from './pages/Menu';
 import About from './pages/About';
+import Menu from './pages/Menu';
 import Contact from './pages/Contact';
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/menu" element={<Menu />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<div className="h-screen flex items-center justify-center font-serif text-2xl">404 | გვერდი ვერ მოიძებნა</div>} />
-      </Routes>
+      <ScrollToTop />
+      <MainLayout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </MainLayout>
     </Router>
   );
 }
+
 export default App;
