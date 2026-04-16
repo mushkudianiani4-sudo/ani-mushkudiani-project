@@ -1,24 +1,54 @@
-import MainLayout from '../layouts/MainLayout';
+import Hero from '../components/Hero';
+import Section from '../components/Section';
 import Card from '../components/Card';
-import { menuItems } from '../data';
 
-const Home = () => (
-  <MainLayout>
-    <section className="h-[80vh] flex items-center justify-center text-center bg-[#FAF8F5] relative overflow-hidden">
-      <div className="relative z-10 px-6">
-        <h1 className="text-6xl md:text-8xl font-serif text-[#3F2F24] mb-6">Welcome to Moon</h1>
-        <p className="text-lg text-gray-600 italic mb-10">ყოველი ფინჯანი ყავა ახალი დასაწყისია.</p>
-        <button className="bg-[#3F2F24] text-white px-10 py-4 rounded-full font-bold uppercase text-xs tracking-widest hover:bg-[#D4A373] transition-all">მენიუს ნახვა</button>
-      </div>
-      <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/coffee-beans.png')]"></div>
-    </section>
-    
-    <section className="py-24 container mx-auto px-6">
-      <h2 className="text-3xl font-serif text-center mb-16 text-[#3F2F24]">პოპულარული არჩევანი</h2>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-        {menuItems.map(item => <Card key={item.id} title={item.name} image={item.imageUrl} description={item.description} price={item.price} />)}
-      </div>
-    </section>
-  </MainLayout>
-);
+const Home = () => {
+  return (
+    <div>
+      <Hero />
+
+      {/* Features Section */}
+      <Section 
+        title="რატომ ჩვენ?" 
+        subtitle="ჩვენ ვზრუნავთ თითოეულ დეტალზე, რათა თქვენი სტუმრობა დაუვიწყარი იყოს."
+      >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <Card 
+            title="საუკეთესო ყავა" 
+            image="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80"
+            description="უმაღლესი ხარისხის არაბიკას მარცვლები პირდაპირ ფერმერებისგან."
+          />
+          <Card 
+            title="მყუდრო გარემო" 
+            image="https://images.unsplash.com/photo-1559925393-8be0ec41b5ec?auto=format&fit=crop&w=600&q=80"
+            description="იდეალური ადგილი მუშაობისთვის, კითხვისთვის ან მეგობრებთან შეხვედრისთვის."
+          />
+          <Card 
+            title="გემრიელი დესერტები" 
+            image="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=600&q=80"
+            description="ყოველდღე ახალი და ნატურალური ინგრედიენტებით მომზადებული ტკბილეული."
+          />
+        </div>
+      </Section>
+
+      {/* Testimonials Section */}
+      <Section 
+        title="რას ამბობენ ჩვენზე" 
+        bgGray={true}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+            <p className="italic text-gray-600 mb-4">"საუკეთესო ადგილია დილის ყავისთვის. პერსონალი ძალიან თბილი და მეგობრულია!"</p>
+            <p className="font-bold text-orange-600">- ნინო კ.</p>
+          </div>
+          <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+            <p className="italic text-gray-600 mb-4">"დესერტები უბრალოდ საოცრებაა. ჩიზქეიქი აუცილებლად უნდა გასინჯოთ."</p>
+            <p className="font-bold text-orange-600">- გიორგი მ.</p>
+          </div>
+        </div>
+      </Section>
+    </div>
+  );
+};
+
 export default Home;
