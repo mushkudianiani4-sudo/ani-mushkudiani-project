@@ -1,4 +1,4 @@
-// src/pages/Menu.tsx
+
 import { useFetch } from '../hooks/useFetch';
 import Section from '../components/Section';
 
@@ -13,7 +13,7 @@ interface MealResponse {
 }
 
 const Menu = () => {
-  // ვიყენებთ ჩვენს ახალ ჰუკს
+
   const { data, loading, error } = useFetch<MealResponse>(
     'https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert'
   );
