@@ -20,6 +20,7 @@ const Home = () => {
             alt="Cafe Moon ინტერიერი" 
             className="w-full h-full object-cover"
             fetchPriority="high"
+            decoding="sync"
             width="1200"
             height="900"
           />

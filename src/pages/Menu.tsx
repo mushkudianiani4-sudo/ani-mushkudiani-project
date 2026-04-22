@@ -51,7 +51,7 @@ const Menu = () => {
                 return (
                   <div key={meal.id} className="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-xl hover:scale-105 transition-all duration-300">
                     <div className="aspect-[4/3] w-full overflow-hidden bg-gray-50">
-                      <img src={meal.imageUrl} alt={meal.name} loading="lazy" width="400" height="300" className="w-full h-full object-cover transition-transform" />
+                      <img src={meal.imageUrl} alt={meal.name} loading="lazy" decoding="async" width="400" height="300" className="w-full h-full object-cover transition-transform" />
                     </div>
                     <div className="p-6 flex flex-col flex-grow justify-between">
                       <div>
@@ -140,7 +140,7 @@ const Menu = () => {
               {cart.length === 0 ? <p className="text-gray-400 text-center py-10 text-sm italic">კალათა ცარიელია</p> : cart.map(item => (
                 <div key={item.idMeal} className="flex justify-between items-center bg-gray-50 p-3 rounded-2xl border border-transparent hover:border-orange-200 transition-all">
                   <div className="flex items-center gap-3">
-                    <img src={item.strMealThumb} className="w-10 h-10 rounded-lg object-cover" alt={item.strMeal} loading="lazy" width="40" height="40" />
+                    <img src={item.strMealThumb} className="w-10 h-10 rounded-lg object-cover" alt={item.strMeal} loading="lazy" decoding="async" width="40" height="40" />
                     <span className="text-xs font-bold truncate w-24 sm:w-32">{item.strMeal}</span>
                   </div>
                   <div className="flex items-center gap-3">

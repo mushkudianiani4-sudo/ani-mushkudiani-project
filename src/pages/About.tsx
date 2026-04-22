@@ -17,6 +17,7 @@ const About = () => {
             alt="Cafe Moon ესპრესო" 
             className="rounded-2xl shadow-lg w-full h-[400px] object-cover"
             loading="lazy"
+            decoding="async"
             width="600"
             height="400"
           />
