@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import Section from '../components/Section';
 
 const About = () => {
-  // ნაბიჯი 5.2: გვერდის სათაურის შეცვლა
   useEffect(() => {
     document.title = 'ჩვენს შესახებ | Cafe Moon';
   }, []);

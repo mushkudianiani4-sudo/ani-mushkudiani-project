@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 export function useLocalStorage<T>(key: string, initialValue: T) {
-  // ვიღებთ მნიშვნელობას LocalStorage-დან ან ვიყენებთ საწყისს
+
   const [storedValue, setStoredValue] = useState<T>(() => {
     try {
       const item = window.localStorage.getItem(key);
@@ -11,7 +11,6 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
     }
   });
 
-  // მნიშვნელობის შეცვლისას ვაახლებთ LocalStorage-ს
   useEffect(() => {
     try {
       window.localStorage.setItem(key, JSON.stringify(storedValue));

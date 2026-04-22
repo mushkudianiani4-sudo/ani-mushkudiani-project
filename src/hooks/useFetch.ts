@@ -1,7 +1,5 @@
-// src/hooks/useFetch.ts
 import { useState, useEffect } from 'react';
 
-// ვიყენებთ Generic ტიპს <T>, რომ ჰუკმა ნებისმიერი სახის მონაცემზე იმუშაოს
 export function useFetch<T>(url: string) {
   const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
