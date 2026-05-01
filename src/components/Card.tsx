@@ -35,9 +35,7 @@ const Card = ({ title, image, description, price, category }: CardProps) => {
           {price && <span className="text-orange-600 font-bold">{price}</span>}
         </div>
 
-        <p className="text-gray-600 dark:text-gray-300 text-sm mb-6 flex-grow">{description}</p>
-
-        <Button label="დაწვრილებით" variant="outline" />
+        <p className="text-gray-600 dark:text-gray-300 text-sm flex-grow">{description}</p>
       </div>
     </div>
   );
