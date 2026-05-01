@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Section from "../components/Section";
 import Card from "../components/Card";
+import Testimonials from "../components/Testimonials";
 import { menuItems } from "../data/constants";
 
 const news = [
@@ -36,16 +37,10 @@ const Home = () => {
   return (
     <div>
       <div className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="/hero-bg.webp"
-            alt="Cafe Moon ინტერიერი"
-            className="w-full h-full object-cover"
-            fetchPriority="high"
-            decoding="sync"
-            width="1200"
-            height="900"
-          />
+        <div 
+          className="absolute inset-0 bg-fixed bg-cover bg-center transform translate-z-0"
+          style={{ backgroundImage: "url('/hero-bg.webp')" }}
+        >
           <div className="absolute inset-0 bg-black/50"></div>
         </div>
 
@@ -104,6 +99,8 @@ const Home = () => {
           </Link>
         </div>
       </Section>
+
+      <Testimonials />
 
       <Section title="სიახლეები" subtitle="გაიგეთ რა ხდება ჩვენს კაფეში">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

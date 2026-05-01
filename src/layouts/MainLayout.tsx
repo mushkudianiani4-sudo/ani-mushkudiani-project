@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 import Header from "../components/Header";
+import StardustCursor from "../components/StardustCursor";
+import OfferWidget from "../components/OfferWidget";
 
 interface LayoutProps {
   children: ReactNode;
@@ -9,6 +11,8 @@ const MainLayout = ({ children }: LayoutProps) => {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 text-sm md:text-base scroll-smooth transition-colors duration-300">
       <Header />
+      <StardustCursor />
+      <OfferWidget />
       <main className="flex-grow">{children}</main>
       <footer className="bg-gray-900 text-white py-10 mt-auto dark:bg-black">
         <div className="container mx-auto px-6 text-center">
