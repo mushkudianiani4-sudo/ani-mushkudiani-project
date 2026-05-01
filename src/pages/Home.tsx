@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import Section from "../components/Section";
 
 const news = [
@@ -45,18 +46,18 @@ const Home = () => {
             ყველაზე მყუდრო ადგილი ქალაქის ცენტრში
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/menu"
+            <Link
+              to="/menu"
               className="bg-orange-600 text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-orange-700 transition-all shadow-lg active:scale-95"
             >
               ნახე მენიუ
-            </a>
-            <a
-              href="/contact"
+            </Link>
+            <Link
+              to="/contact"
               className="border-2 border-white text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-white/10 transition-all"
             >
               დაგვიკავშირდი
-            </a>
+            </Link>
           </div>
         </div>
       </div>
