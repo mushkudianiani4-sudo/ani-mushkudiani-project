@@ -5,7 +5,6 @@ const OfferWidget = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Show the widget after 5 seconds
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 5000);

@@ -23,7 +23,6 @@ const StardustCursor = () => {
 
     const handleMouseMove = (e: MouseEvent) => {
       const now = Date.now();
-      // Only spawn a star every 40ms to prevent performance issues
       if (now - lastTime < 40) return;
       lastTime = now;
 
@@ -31,12 +30,11 @@ const StardustCursor = () => {
         id: starId++,
         x: e.clientX,
         y: e.clientY,
-        size: Math.random() * 8 + 4, // 4px to 12px
+        size: Math.random() * 8 + 4,
       };
 
       setStars((prev) => [...prev, newStar]);
 
-      // Remove the star after 1 second
       setTimeout(() => {
         setStars((prev) => prev.filter((s) => s.id !== newStar.id));
       }, 1000);
