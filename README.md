@@ -1,7 +1,9 @@
 # ☕ Cafe Moon — ქუთაისის კაფეს ვებ-საიტი
 
 ## პროექტის სახელი
-**Cafe Moon** — საუკეთესო ყავა და დესერტები ქუთაისში
+**Cafe Moon** (`ani-mushkudiani-project`) — საუკეთესო ყავა და დესერტები ქუთაისში
+
+**GitHub პროფილი:** [https://github.com/mushkudianiani4-sudo](https://github.com/mushkudianiani4-sudo)
 
 ## აღწერა
 Cafe Moon არის თანამედროვე, რესპონსიული ვებ-აპლიკაცია ქუთაისში მდებარე კაფესთვის. პროექტი შექმნილია React-ით და TypeScript-ით, გამოიყენება Tailwind CSS დიზაინისთვის, Redux Toolkit გლობალური სთეითისთვის, და Formik + Yup ვალიდაციისთვის.
