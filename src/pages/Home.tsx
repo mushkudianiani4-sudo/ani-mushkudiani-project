@@ -10,12 +10,21 @@ const news = [
     title: "ცოცხალი მუსიკის საღამო",
     date: "20 აპრილი",
     desc: "მოუსმინეთ ჯაზს ყოველ პარასკევს Cafe Moon-ში.",
+    imageUrl: "https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=400&q=60",
   },
   {
     id: 2,
     title: "ახალი მენიუ",
     date: "15 აპრილი",
     desc: "დავაგემოვნეთ ჩვენი ახალი ფრანგული კრუასანები.",
+    imageUrl: "https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?auto=format&fit=crop&w=400&q=60",
+  },
+  {
+    id: 3,
+    title: "ბარისტას მასტერკლასი",
+    date: "10 აპრილი",
+    desc: "ისწავლეთ ლატე-არტის ხელოვნება ჩვენს წამყვან ბარისტასთან.",
+    imageUrl: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=400&q=60",
   },
 ];
 
@@ -97,21 +106,36 @@ const Home = () => {
       </Section>
 
       <Section title="სიახლეები" subtitle="გაიგეთ რა ხდება ჩვენს კაფეში">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {news.map((item) => (
             <div
               key={item.id}
-              className="border-l-4 border-orange-600 p-6 bg-white shadow-sm dark:bg-gray-800 transition-colors duration-300"
+              className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 flex flex-col group"
             >
-              <span className="text-sm text-orange-600 font-bold dark:text-orange-400">
-                {item.date}
-              </span>
-              <h3 className="text-xl font-bold mt-2 dark:text-gray-100">
-                {item.title}
-              </h3>
-              <p className="text-gray-600 mt-2 dark:text-gray-300">
-                {item.desc}
-              </p>
+              <div className="h-48 overflow-hidden relative">
+                <img 
+                  src={item.imageUrl} 
+                  alt={item.title} 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="absolute top-4 left-4 bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                  {item.date}
+                </div>
+              </div>
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 mt-3 dark:text-gray-300 flex-grow">
+                  {item.desc}
+                </p>
+                <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <button className="text-sm font-bold text-gray-500 hover:text-orange-600 dark:text-gray-400 dark:hover:text-orange-400 transition-colors">
+                    სრულად ნახვა →
+                  </button>
+                </div>
+              </div>
             </div>
           ))}
         </div>
