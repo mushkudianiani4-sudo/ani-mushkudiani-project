@@ -130,11 +130,6 @@ const Home = () => {
                 <p className="text-gray-600 mt-3 dark:text-gray-300 flex-grow">
                   {item.desc}
                 </p>
-                <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
-                  <button className="text-sm font-bold text-gray-500 hover:text-orange-600 dark:text-gray-400 dark:hover:text-orange-400 transition-colors">
-                    სრულად ნახვა →
-                  </button>
-                </div>
               </div>
             </div>
           ))}
