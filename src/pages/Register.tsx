@@ -1,65 +1,84 @@
-import { useState } from 'react';
-import Section from '../components/Section';
+import { useState } from "react";
+import Section from "../components/Section";
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    phone: '',
-    address: ''
+    username: "",
+    email: "",
+    phone: "",
+    address: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert('რეგისტრაცია წარმატებით დასრულდა! თქვენი შეკვეთა მიღებულია.');
-    localStorage.removeItem('cafe_moon_cart');
-    window.location.href = '/';
+    alert("რეგისტრაცია წარმატებით დასრულდა! თქვენი შეკვეთა მიღებულია.");
+    localStorage.removeItem("cafe_moon_cart");
+    window.location.href = "/";
   };
 
   return (
-    <Section title="რეგისტრაცია" subtitle="გაიარეთ რეგისტრაცია შეკვეთის დასასრულებლად">
+    <Section
+      title="რეგისტრაცია"
+      subtitle="გაიარეთ რეგისტრაცია შეკვეთის დასასრულებლად"
+    >
       <div className="max-w-md mx-auto bg-white p-8 rounded-3xl shadow-2xl border border-gray-100">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label className="block text-gray-700 font-bold mb-2">სახელი და გვარი</label>
-            <input 
-              type="text" 
+            <label className="block text-gray-700 font-bold mb-2">
+              სახელი და გვარი
+            </label>
+            <input
+              type="text"
               required
               className="w-full p-4 border rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition-all"
               value={formData.username}
-              onChange={(e) => setFormData({...formData, username: e.target.value})}
+              onChange={(e) =>
+                setFormData({ ...formData, username: e.target.value })
+              }
             />
           </div>
           <div>
-            <label className="block text-gray-700 font-bold mb-2">ელ-ფოსტა</label>
-            <input 
-              type="email" 
+            <label className="block text-gray-700 font-bold mb-2">
+              ელ-ფოსტა
+            </label>
+            <input
+              type="email"
               required
               className="w-full p-4 border rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition-all"
               value={formData.email}
-              onChange={(e) => setFormData({...formData, email: e.target.value})}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
             />
           </div>
           <div>
-            <label className="block text-gray-700 font-bold mb-2">ტელეფონის ნომერი</label>
-            <input 
-              type="tel" 
+            <label className="block text-gray-700 font-bold mb-2">
+              ტელეფონის ნომერი
+            </label>
+            <input
+              type="tel"
               required
               className="w-full p-4 border rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition-all"
               value={formData.phone}
-              onChange={(e) => setFormData({...formData, phone: e.target.value})}
+              onChange={(e) =>
+                setFormData({ ...formData, phone: e.target.value })
+              }
             />
           </div>
           <div>
-            <label className="block text-gray-700 font-bold mb-2">მიტანის მისამართი (ქუთაისი)</label>
-            <textarea 
+            <label className="block text-gray-700 font-bold mb-2">
+              მიტანის მისამართი (ქუთაისი)
+            </label>
+            <textarea
               required
               className="w-full p-4 border rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition-all"
               value={formData.address}
-              onChange={(e) => setFormData({...formData, address: e.target.value})}
+              onChange={(e) =>
+                setFormData({ ...formData, address: e.target.value })
+              }
             />
           </div>
-          <button 
+          <button
             type="submit"
             className="w-full bg-orange-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-orange-700 transition-colors shadow-lg"
           >

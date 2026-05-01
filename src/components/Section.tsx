@@ -1,4 +1,5 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from "react";
+import React from "react";
 
 interface SectionProps {
   title: string;
@@ -14,16 +15,12 @@ const Section = ({ title, subtitle, children }: SectionProps) => {
           {title}
         </h2>
         {subtitle && (
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            {subtitle}
-          </p>
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">{subtitle}</p>
         )}
       </div>
-      <div className="w-full">
-        {children}
-      </div>
+      <div className="w-full">{children}</div>
     </section>
   );
 };
 
-export default Section;
+export default React.memo(Section);

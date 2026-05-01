@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 export function useFetch<T>(url: string) {
   const [data, setData] = useState<T | null>(null);
@@ -10,11 +10,11 @@ export function useFetch<T>(url: string) {
       try {
         setLoading(true);
         const response = await fetch(url);
-        if (!response.ok) throw new Error('მონაცემების წამოღება ვერ მოხერხდა');
+        if (!response.ok) throw new Error("მონაცემების წამოღება ვერ მოხერხდა");
         const result = await response.json();
         setData(result);
-      } catch (err: any) {
-        setError(err.message);
+      } catch (err: unknown) {
+        setError(err instanceof Error ? err.message : "Unknown error");
       } finally {
         setLoading(false);
       }

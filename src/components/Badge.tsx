@@ -1,3 +1,5 @@
+import React from "react";
+
 interface BadgeProps {
   text: string;
 }
@@ -10,4 +12,4 @@ const Badge = ({ text }: BadgeProps) => {
   );
 };
 
-export default Badge;
+export default React.memo(Badge);
