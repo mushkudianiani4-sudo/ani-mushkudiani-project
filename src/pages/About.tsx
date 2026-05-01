@@ -27,21 +27,21 @@ const About = () => {
           />
         </div>
         <div className="md:w-1/2 space-y-4">
-          <h3 className="text-2xl font-bold text-gray-800 italic">
+          <h3 className="text-2xl font-bold text-gray-800 dark:text-white italic">
             ჩვენი ისტორია
           </h3>
-          <p className="text-gray-700 leading-relaxed text-lg">
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
             <span className="text-orange-600 font-bold">Cafe Moon</span> დაიბადა
             2020 წელს, ქუთაისის ისტორიულ ცენტრში — თეთრი ხიდის მიმდებარედ. ჩვენი
             მიზანი თავიდანვე იყო შეგვექმნა ადგილი, სადაც ყავის კულტურა და
             ქართული სტუმართმოყვარეობა ერთმანეთს ხვდება.
           </p>
-          <p className="text-gray-600 leading-relaxed">
+          <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
             პირველი ფინჯანი ყავიდან დღემდე, ჩვენ ვცდილობთ ყოველი სტუმრისთვის
             განსაკუთრებული გამოცდილება შევქმნათ. ჩვენი ბარისტები სპეციალურ
             კურსებს გადიან და მუდმივად ეძებენ ახალ გემოვნებით კომბინაციებს.
           </p>
-          <p className="text-gray-600 leading-relaxed">
+          <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
             სახელწოდება "Moon" შემთხვევით არ არჩეულა — მთვარის სინათლე ქუთაისის
             ღამეულ ქუჩებში განსაკუთრებულ ატმოსფეროს ქმნის, და სწორედ ამ სითბოს
             ვცდილობთ ჩვენს კაფეშიც შემოვიტანოთ.
@@ -50,7 +50,7 @@ const About = () => {
       </div>
 
       <div className="mb-20">
-        <h3 className="text-2xl font-bold text-gray-800 text-center mb-12 italic">
+        <h3 className="text-2xl font-bold text-gray-800 dark:text-white text-center mb-12 italic">
           ჩვენი გზა
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -78,24 +78,24 @@ const About = () => {
           ].map((item) => (
             <div
               key={item.year}
-              className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-orange-200 transition-all duration-300 text-center group"
+              className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg hover:border-orange-200 transition-all duration-300 text-center group"
             >
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-600 transition-colors">
+              <div className="w-16 h-16 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-600 transition-colors">
                 <span className="text-orange-600 font-black text-lg group-hover:text-white transition-colors">
                   {item.year}
                 </span>
               </div>
-              <h4 className="font-bold text-gray-800 text-lg mb-2">
+              <h4 className="font-bold text-gray-800 dark:text-white text-lg mb-2">
                 {item.title}
               </h4>
-              <p className="text-gray-500 text-sm">{item.desc}</p>
+              <p className="text-gray-500 dark:text-gray-400 text-sm">{item.desc}</p>
             </div>
           ))}
         </div>
       </div>
 
       <div className="mb-20">
-        <h3 className="text-2xl font-bold text-gray-800 text-center mb-12 italic">
+        <h3 className="text-2xl font-bold text-gray-800 dark:text-white text-center mb-12 italic">
           რატომ Cafe Moon?
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -118,13 +118,13 @@ const About = () => {
           ].map((item) => (
             <div
               key={item.title}
-              className="bg-gradient-to-br from-orange-50 to-white p-8 rounded-2xl border border-orange-100 hover:shadow-xl transition-all duration-300"
+              className="bg-gradient-to-br from-orange-50 to-white dark:from-gray-800 dark:to-gray-900 p-8 rounded-2xl border border-orange-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300"
             >
               <div className="text-4xl mb-4">{item.icon}</div>
-              <h4 className="font-bold text-gray-800 text-xl mb-3">
+              <h4 className="font-bold text-gray-800 dark:text-white text-xl mb-3">
                 {item.title}
               </h4>
-              <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>

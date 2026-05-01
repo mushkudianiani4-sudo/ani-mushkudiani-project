@@ -79,9 +79,9 @@ const Menu = () => {
                 return (
                   <div
                     key={meal.id}
-                    className="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-xl hover:scale-105 transition-all duration-300"
+                    className="bg-white dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col h-full hover:shadow-xl hover:scale-105 transition-all duration-300"
                   >
-                    <div className="aspect-[4/3] w-full overflow-hidden bg-gray-50">
+                    <div className="aspect-[4/3] w-full overflow-hidden bg-gray-50 dark:bg-gray-700">
                       <img
                         src={meal.imageUrl}
                         alt={meal.name}
@@ -97,10 +97,10 @@ const Menu = () => {
                         <span className="text-xs font-bold text-orange-600 bg-orange-50 px-2 py-1 rounded-full">
                           {meal.category}
                         </span>
-                        <h3 className="font-bold text-gray-800 text-sm md:text-base mt-2 line-clamp-1">
+                        <h3 className="font-bold text-gray-800 dark:text-white text-sm md:text-base mt-2 line-clamp-1">
                           {meal.name}
                         </h3>
-                        <p className="text-gray-500 text-xs mt-1 line-clamp-2">
+                        <p className="text-gray-500 dark:text-gray-300 text-xs mt-1 line-clamp-2">
                           {meal.description}
                         </p>
                       </div>
@@ -131,7 +131,7 @@ const Menu = () => {
                         ) : (
                           <button
                             onClick={() => changeQuantity(cartItem, 1)}
-                            className="bg-gray-100 text-gray-800 px-4 py-2 rounded-xl font-bold hover:bg-blue-700 hover:text-white active:scale-95 transition-all duration-300 text-xs md:text-sm"
+                            className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white px-4 py-2 rounded-xl font-bold hover:bg-blue-700 hover:text-white active:scale-95 transition-all duration-300 text-xs md:text-sm"
                           >
                             დამატება
                           </button>
@@ -143,7 +143,7 @@ const Menu = () => {
               })}
             </div>
           ) : (
-            <div className="bg-white p-6 md:p-8 rounded-[2.5rem] shadow-xl border border-gray-50">
+            <div className="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-[2.5rem] shadow-xl border border-gray-50 dark:border-gray-700">
               <button
                 onClick={() => setIsCheckout(false)}
                 className="mb-6 text-orange-600 font-bold flex items-center gap-2 hover:underline"
@@ -156,7 +156,7 @@ const Menu = () => {
                     required
                     aria-label="თქვენი სახელი"
                     placeholder="თქვენი სახელი"
-                    className="p-4 bg-gray-50 rounded-2xl outline-none focus:ring-2 focus:ring-orange-500 text-sm md:text-base transition-all"
+                    className="p-4 bg-gray-50 dark:bg-gray-700 dark:text-white rounded-2xl outline-none focus:ring-2 focus:ring-orange-500 text-sm md:text-base transition-all"
                     onInvalid={(e) =>
                       e.currentTarget.setCustomValidity("სახელი სავალდებულოა")
                     }
@@ -166,7 +166,7 @@ const Menu = () => {
                     required
                     aria-label="ტელეფონის ნომერი"
                     placeholder="ტელეფონის ნომერი"
-                    className="p-4 bg-gray-50 rounded-2xl outline-none focus:ring-2 focus:ring-orange-500 text-sm md:text-base transition-all"
+                    className="p-4 bg-gray-50 dark:bg-gray-700 dark:text-white rounded-2xl outline-none focus:ring-2 focus:ring-orange-500 text-sm md:text-base transition-all"
                     onInvalid={(e) =>
                       e.currentTarget.setCustomValidity(
                         "მობილურის ნომერი სავალდებულოა",
@@ -179,7 +179,7 @@ const Menu = () => {
                   required
                   aria-label="მიტანის მისამართი ქუთაისში"
                   placeholder="მიტანის მისამართი ქუთაისში"
-                  className="w-full p-4 bg-gray-50 rounded-2xl h-32 outline-none focus:ring-2 focus:ring-orange-500 resize-none text-sm md:text-base transition-all"
+                  className="w-full p-4 bg-gray-50 dark:bg-gray-700 dark:text-white rounded-2xl h-32 outline-none focus:ring-2 focus:ring-orange-500 resize-none text-sm md:text-base transition-all"
                   onInvalid={(e) =>
                     e.currentTarget.setCustomValidity("მისამართი სავალდებულოა")
                   }
@@ -187,19 +187,19 @@ const Menu = () => {
                 ></textarea>
 
                 <div className="pt-4">
-                  <h4 className="font-bold mb-4">გადახდის მეთოდი:</h4>
+                  <h4 className="font-bold mb-4 dark:text-white">გადახდის მეთოდი:</h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <button
                       type="button"
                       onClick={() => setPaymentMethod("card")}
-                      className={`py-4 rounded-2xl font-bold border-2 transition-all active:scale-95 ${paymentMethod === "card" ? "border-orange-600 bg-orange-50 text-orange-600" : "border-gray-100"}`}
+                      className={`py-4 rounded-2xl font-bold border-2 transition-all active:scale-95 ${paymentMethod === "card" ? "border-orange-600 bg-orange-50 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400" : "border-gray-100 dark:border-gray-700 dark:text-white"}`}
                     >
                       💳 ბარათით
                     </button>
                     <button
                       type="button"
                       onClick={() => setPaymentMethod("cash")}
-                      className={`py-4 rounded-2xl font-bold border-2 transition-all active:scale-95 ${paymentMethod === "cash" ? "border-orange-600 bg-orange-50 text-orange-600" : "border-gray-100"}`}
+                      className={`py-4 rounded-2xl font-bold border-2 transition-all active:scale-95 ${paymentMethod === "cash" ? "border-orange-600 bg-orange-50 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400" : "border-gray-100 dark:border-gray-700 dark:text-white"}`}
                     >
                       💵 ხელზე
                     </button>
@@ -243,8 +243,8 @@ const Menu = () => {
         </div>
 
         <aside className="lg:w-[380px] w-full lg:sticky lg:top-28">
-          <div className="bg-white rounded-[2.5rem] p-6 md:p-8 shadow-2xl border border-gray-50">
-            <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-6 italic">
+          <div className="bg-white dark:bg-gray-800 rounded-[2.5rem] p-6 md:p-8 shadow-2xl border border-gray-50 dark:border-gray-700">
+            <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 dark:text-white mb-6 italic">
               შეკვეთა
             </h2>
             <div className="space-y-4 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
@@ -256,7 +256,7 @@ const Menu = () => {
                 cart.map((item) => (
                   <div
                     key={item.idMeal}
-                    className="flex justify-between items-center bg-gray-50 p-3 rounded-2xl border border-transparent hover:border-orange-200 transition-all"
+                    className="flex justify-between items-center bg-gray-50 dark:bg-gray-700 p-3 rounded-2xl border border-transparent hover:border-orange-200 transition-all"
                   >
                     <div className="flex items-center gap-3">
                       <img
@@ -291,12 +291,12 @@ const Menu = () => {
               )}
             </div>
             {cart.length > 0 && (
-              <div className="mt-8 pt-6 border-t border-dashed border-gray-100">
+              <div className="mt-8 pt-6 border-t border-dashed border-gray-100 dark:border-gray-600">
                 <div className="flex justify-between items-center mb-6">
-                  <span className="text-gray-500 text-sm md:text-base">
+                  <span className="text-gray-500 dark:text-gray-300 text-sm md:text-base">
                     ჯამი:
                   </span>
-                  <span className="text-2xl md:text-3xl font-black text-gray-900 tracking-tighter">
+                  <span className="text-2xl md:text-3xl font-black text-gray-900 dark:text-white tracking-tighter">
                     {totalPrice.toFixed(2)} ₾
                   </span>
                 </div>

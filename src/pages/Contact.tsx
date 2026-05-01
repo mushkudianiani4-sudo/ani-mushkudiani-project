@@ -33,36 +33,36 @@ const Contact = () => {
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         <div className="space-y-6">
-          <div className="bg-white p-8 rounded-3xl shadow-sm border border-orange-100 hover:shadow-md transition-shadow">
-            <h3 className="text-2xl font-bold text-gray-800 mb-4 italic">
+          <div className="bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-sm border border-orange-100 dark:border-gray-700 hover:shadow-md transition-shadow">
+            <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4 italic">
               მისამართი
             </h3>
-            <p className="text-gray-600 text-lg leading-relaxed">
+            <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
               ქუთაისი, პუშკინის ქუჩა #5 <br />
               (თეთრი ხიდის მიმდებარედ)
             </p>
           </div>
 
-          <div className="bg-white p-8 rounded-3xl shadow-sm border border-orange-100 hover:shadow-md transition-shadow">
-            <h3 className="text-2xl font-bold text-gray-800 mb-4 italic">
+          <div className="bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-sm border border-orange-100 dark:border-gray-700 hover:shadow-md transition-shadow">
+            <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4 italic">
               კონტაქტი
             </h3>
-            <p className="text-gray-600 text-lg">📞 +995 555 555 555</p>
-            <p className="text-gray-600 text-lg">📧 hello@cafemoon.ge</p>
+            <p className="text-gray-600 dark:text-gray-300 text-lg">📞 +995 555 555 555</p>
+            <p className="text-gray-600 dark:text-gray-300 text-lg">📧 hello@cafemoon.ge</p>
           </div>
 
-          <div className="bg-white p-8 rounded-3xl shadow-sm border border-orange-100 hover:shadow-md transition-shadow">
-            <h3 className="text-2xl font-bold text-gray-800 mb-4 italic">
+          <div className="bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-sm border border-orange-100 dark:border-gray-700 hover:shadow-md transition-shadow">
+            <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4 italic">
               სამუშაო საათები
             </h3>
-            <p className="text-gray-600 text-lg font-medium">
+            <p className="text-gray-600 dark:text-gray-300 text-lg font-medium">
               ყოველდღე: 09:00 - 23:00
             </p>
           </div>
         </div>
 
-        <div className="bg-white p-8 rounded-3xl shadow-xl border border-gray-50">
-          <h3 className="text-2xl font-bold text-gray-800 mb-6 italic">
+        <div className="bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-xl border border-gray-50 dark:border-gray-700">
+          <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 italic">
             მოგვწერეთ
           </h3>
           <form onSubmit={formik.handleSubmit} className="space-y-6">
@@ -70,7 +70,7 @@ const Contact = () => {
               <input
                 aria-label="თქვენი სახელი"
                 placeholder="თქვენი სახელი"
-                className={`w-full p-4 bg-gray-50 rounded-2xl outline-none focus:ring-2 text-sm md:text-base transition-all ${formik.touched.name && formik.errors.name ? "ring-2 ring-red-500 bg-red-50" : "focus:ring-orange-500"}`}
+                className={`w-full p-4 bg-gray-50 dark:bg-gray-700 dark:text-white rounded-2xl outline-none focus:ring-2 text-sm md:text-base transition-all ${formik.touched.name && formik.errors.name ? "ring-2 ring-red-500 bg-red-50 dark:bg-red-900/30" : "focus:ring-orange-500"}`}
                 {...formik.getFieldProps("name")}
               />
               {formik.touched.name && formik.errors.name ? (
@@ -84,7 +84,7 @@ const Contact = () => {
               <input
                 aria-label="თქვენი ელ-ფოსტა"
                 placeholder="თქვენი ელ-ფოსტა"
-                className={`w-full p-4 bg-gray-50 rounded-2xl outline-none focus:ring-2 text-sm md:text-base transition-all ${formik.touched.email && formik.errors.email ? "ring-2 ring-red-500 bg-red-50" : "focus:ring-orange-500"}`}
+                className={`w-full p-4 bg-gray-50 dark:bg-gray-700 dark:text-white rounded-2xl outline-none focus:ring-2 text-sm md:text-base transition-all ${formik.touched.email && formik.errors.email ? "ring-2 ring-red-500 bg-red-50 dark:bg-red-900/30" : "focus:ring-orange-500"}`}
                 {...formik.getFieldProps("email")}
               />
               {formik.touched.email && formik.errors.email ? (
@@ -98,7 +98,7 @@ const Contact = () => {
               <textarea
                 aria-label="თქვენი შეტყობინება"
                 placeholder="თქვენი შეტყობინება"
-                className={`w-full p-4 bg-gray-50 rounded-2xl h-32 outline-none focus:ring-2 resize-none text-sm md:text-base transition-all ${formik.touched.message && formik.errors.message ? "ring-2 ring-red-500 bg-red-50" : "focus:ring-orange-500"}`}
+                className={`w-full p-4 bg-gray-50 dark:bg-gray-700 dark:text-white rounded-2xl h-32 outline-none focus:ring-2 resize-none text-sm md:text-base transition-all ${formik.touched.message && formik.errors.message ? "ring-2 ring-red-500 bg-red-50 dark:bg-red-900/30" : "focus:ring-orange-500"}`}
                 {...formik.getFieldProps("message")}
               />
               {formik.touched.message && formik.errors.message ? (
